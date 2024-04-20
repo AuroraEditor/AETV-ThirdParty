@@ -20,6 +20,11 @@ public struct TextMutation {
     public init(delete range: NSRange, limit: Int) {
         self.init(string: "", range: range, limit: limit)
     }
+
+    func inverse(forContent currentContent: String, limit: Int) -> TextMutation {
+        // Stub for inverse mutation calculation: should return the mutation needed to revert this one
+        return TextMutation(string: currentContent, range: self.range, limit: limit)
+    }
 }
 
 extension TextMutation: Hashable {}
